@@ -1,0 +1,4 @@
+module.exports = {
+    GUEST_ALLOWED: 'GUEST_ALLOWED',
+    EMAIL_VALIDATED: 'VALID_EMAIL',
+};

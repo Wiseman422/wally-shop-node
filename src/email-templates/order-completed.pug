@@ -1,0 +1,269 @@
+doctype html
+html
+  head
+    title Order Receipt
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    style(type='text/css').
+      /* CLIENT-SPECIFIC STYLES */
+      body, table, td, a{-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;} /* Prevent WebKit and Windows mobile changing default text sizes */
+      table, td{mso-table-lspace: 0pt; mso-table-rspace: 0pt;} /* Remove spacing between tables in Outlook 2007 and up */
+      img{-ms-interpolation-mode: bicubic;} /* Allow smoother rendering of resized image in Internet Explorer */
+      /* RESET STYLES */
+      img{border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none;}
+      table{border-collapse: collapse !important;}
+      body{height: 100% !important; margin: 0 !important; padding: 0 !important; width: 100% !important;}
+      @font-face {
+      font-family: 'Circe';
+      src: url("fonts/Circe-Regular.eot");
+      src: url("fonts/Circe-Regular.eot?#iefix") format("embedded-opentype"),
+      url("fonts/Circe-Regular.woff") format("woff"),
+      url("fonts/Circe-Regular.ttf") format("truetype");
+      font-weight:normal;
+      }
+      @font-face {
+      font-family: 'Circe';
+      src: url("fonts/Circe-Bold.eot");
+      src: url("fonts/Circe-Bold.eot?#iefix") format("embedded-opentype"),
+      url("fonts/Circe-Bold.woff") format("woff"),
+      url("fonts/Circe-Bold.ttf") format("truetype");
+      font-weight: 700;
+      }
+      @font-face {
+      font-family: 'Circe';
+      src: url("fonts/Circe-Light.eot");
+      src: url("fonts/Circe-Light.eot?#iefix") format("embedded-opentype"),
+      url("fonts/Circe-Light.woff") format("woff"),
+      url("fonts/Circe-Light.ttf") format("truetype");
+      font-weight: 300;
+      }
+      /* iOS BLUE LINKS */
+      a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+      }
+      /* MOBILE STYLES */
+      @media screen and (max-width: 599px) {
+      /* ALLOWS FOR FLUID TABLES */
+      .wrapper {
+      width: 100% !important;
+      max-width: 100% !important;
+      }
+      .wrapper-50{
+      width: 50% !important;
+      max-width: 50% !important;}
+      /* USE THESE CLASSES TO HIDE CONTENT ON MOBILE */
+      .mobile-hide {
+      display: none !important;
+      }
+      /* FULL-WIDTH TABLES */
+      .responsive-table {
+      width: 100% !important;
+      }
+      /* UTILITY CLASSES FOR ADJUSTING PADDING ON MOBILE */
+      .padding {
+      padding: 10px 5% 15px 5% !important;
+      }
+      .section-padding {
+      padding: 0 15px 50px 15px !important;
+      }
+      .padding-xsno{padding-left:15px!important;padding-right:15px!important;}
+      .h1{font-size: 18px!important;}
+      .pln-xs{padding-left: 15px!important;}
+      }
+      /* ANDROID CENTER FIX */
+      div[style*="margin: 16px 0;"] { margin: 0 !important; }
+  body(style='margin: 0 !important; padding: 0 !important;')
+    // HIDDEN PREHEADER TEXT
+    div(style='display: none; font-size: 1px; color: #fefefe; line-height: 1px; font-family: Helvetica, Arial, sans-serif; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;')
+      | #{preheader}
+    // HEADER
+    -var number = 0;
+    table(border='0', cellpadding='0', cellspacing='0', width='100%')
+      tbody
+        tr
+          td(bgcolor='#fafafa', align='center')
+            table(border='0', cellpadding='0', cellspacing='0', width='100%')
+              tbody
+                tr
+                  td(align='center', valign='top', style='border-collapse: collapse;')
+                    //if (gte mso 9)|(IE)
+                      table(align='center', border='0', cellspacing='0', cellpadding='0', width='500')
+                        tbody
+                          tr
+                            td(align='center', valign='top', width='500')
+                    table.wrapper(bgcolor='#ffffff', border='0', cellpadding='0', cellspacing='0', width='100%', style='max-width: 500px;')
+                      tbody
+                        tr
+                          td(align='center', valign='top', style='padding-top:40px;')
+                            table(border='0', cellpadding='0', cellspacing='0', width='100%')
+                              tbody
+                                tr
+                                  td(align='center', valign='top', style="color: #ff0000;font-family: 'Circe', sans-serif, Arial;font-size:24px;font-weight: bold;line-height: 120%;padding:13px 15px 10px;text-align: center;vertical-align: middle;border-collapse: collapse;border-top:2px solid #bbbbbb;border-bottom:2px solid #bbbbbb;letter-spacing:2px;")
+                                    | THE WALLY SHOP
+                    //if (gte mso 9)|(IE)
+        tr
+          td(bgcolor='#fafafa', align='center')
+            table(border='0', cellpadding='0', cellspacing='0', width='100%')
+              tbody
+                tr
+                  td(align='center', valign='top', style='border-collapse: collapse;')
+                    //if (gte mso 9)|(IE)
+                      table(align='center', border='0', cellspacing='0', cellpadding='0', width='500')
+                        tbody
+                          tr
+                            td(align='center', valign='top', width='500')
+                    table.wrapper(bgcolor='#ffffff', border='0', cellpadding='0', cellspacing='0', width='100%', style='max-width: 500px;')
+                      tbody
+                        tr
+                        - var newDate = data.delivery_time;
+                          td(align='center', valign='top', style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;font-weight: normal;line-height: 140%;padding:10px 15px 40px;text-align: left;vertical-align: middle;border-collapse: collapse;")
+                            p(style='margin-top:0;margin-bottom:0;')
+                              | Your order was delivered on #{newDate} from The Wally Shop
+                    //if (gte mso 9)|(IE)
+        tr
+          td(bgcolor='#fafafa', align='center')
+            table(border='0', cellpadding='0', cellspacing='0', width='100%')
+              tbody
+                tr
+                  td(align='center', valign='top', style='border-collapse: collapse;')
+                    //if (gte mso 9)|(IE)
+                      table(align='center', border='0', cellspacing='0', cellpadding='0', width='500')
+                        tbody
+                          tr
+                            td(align='center', valign='top', width='500')
+                    table.wrapper(bgcolor='#ffffff', border='0', cellpadding='0', cellspacing='0', width='100%', style='max-width: 500px;')
+                      tbody
+                        tr
+                          td(align='center', valign='top', style='padding-top:0;padding-left:20px;padding-right:20px;padding-bottom:20px;')
+                            table(border='0', cellpadding='0', cellspacing='0', width='100%', style='max-width:440px;border:1px solid #bbbbbb;box-shadow:3px 5px 6px rgba(0,0,0,.3);-webkit-box-shadow:3px 5px 6px rgba(0,0,0,.3);')
+                              tbody
+                                tr
+                                  td(align='center', valign='top', style='padding:10px 15px;border-collapse: collapse;')
+                                    table(border='0', cellpadding='0', cellspacing='0', width='100%')
+                                      tbody
+                                        tr
+                                          td(align='center', valign='top', style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:18px;font-weight:700;line-height: 140%;padding:0 0 5px;text-align: left;vertical-align: middle;border-collapse: collapse;border-bottom:2px solid #e8e8e8;")
+                                            | Order Summary
+                                tr
+                                  td(align='center', valign='top', style='padding:0 15px;border-collapse: collapse;')
+                                    table(border='0', cellpadding='0', cellspacing='0', width='100%')
+                                      tbody
+                                        - for (var i = 0 ; i < data.cart_items.length ; i++) {
+                                          -number = data.cart_items[i].product_price/100;
+                                          -total = data.cart_items[i].total/100;
+                                          -producer = data.cart_items[i].producer;
+                                          -substitute_for_name = data.cart_items[i].substitute_for_name;
+                                          -missing = data.cart_items[i].missing;
+                                          -price_unit = data.cart_items[i].price_unit;
+                                          -quantity = data.cart_items[i].customer_quantity;
+                                          
+                                          if substitute_for_name
+                                            -substitute = "(" + substitute_for_name + ")";
+                                          else if !missing
+                                            -substitute = "";
+                                          else
+                                            -substitute = "(No substitute found)";
+                                            
+                                          if quantity > 1 && price_unit != "ea"
+                                            -plural = "s";
+                                          else
+                                            -plural = "";
+                                        tr
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:left;border-bottom:1px solid #e8e8e8;padding-bottom:4px;padding-top:10px;")
+                                            h3(style='font-size:16px;font-weight: 700;margin:0;') #{data.cart_items[i].product_name} #{substitute}
+                                            |                                                             $#{number.toFixed(2)} / #{price_unit}#{plural} , #{producer}
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:right;border-bottom:1px solid #e8e8e8;padding-bottom:4px;padding-top:10px;")
+                                            | x#{quantity}
+                                            br
+                                            |                                                             $#{total.toFixed(2)}
+                                        - }
+                                        tr
+                                          -number = data.subtotal/100;
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:left;padding-top:10px;")
+                                            | Subtotal
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:right;padding-top:10px;")
+                                            | $#{number.toFixed(2)}
+                                        tr
+                                          -number = (data.tax_amount + data.service_amount)/100;
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:left;")
+                                            | Service fee
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:right;")
+                                            | $#{number.toFixed(2)}
+                                        tr
+                                          -number = data.delivery_amount/100;
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:left;")
+                                            | Delivery fee
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:right;")
+                                            | $#{number.toFixed(2)}
+                                        tr
+                                          -number = data.packaging_deposit/100;
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:left;border-bottom:2px solid #e8e8e8;padding-bottom:4px;")
+                                            | Packaging deposit
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:right;border-bottom:2px solid #e8e8e8;padding-bottom:4px;")
+                                            | $#{number.toFixed(2)}
+                                        tr
+                                          -number = data.applied_store_credit/100;
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:left;border-bottom:2px solid #e8e8e8;padding-bottom:4px;")
+                                            | Store credit used
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:right;border-bottom:2px solid #e8e8e8;padding-bottom:4px;")
+                                            | $-#{number.toFixed(2)}
+                                        tr
+                                          -number = data.total/100;
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:18px;font-weight:bold;text-align:left;font-weight:700;padding-bottom:15px;")
+                                            | Total
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:16px;text-align:right;font-weight:700;padding-bottom:15px;")
+                                            | $#{number.toFixed(2)}
+                                        tr
+                                          td(colspan='2', style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:left;padding-top:10px;")
+                                            h4(style='font-size:16px;font-weight: 700;margin:0;') Packaging Used
+                                            h4(style='font-size:16px;font-weight: 700;margin:0;') Packaging Returned
+                                        
+                                        - for (var j = 0 ; j < data.packaging.length ; j++) {
+                                        tr
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:left;")
+                                            | #{data.packaging[j].type}
+                                          td(style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:14px;text-align:right;")
+                                            | x#{data.packaging[j].quantity}
+                                        - }
+                                        tr
+                                          -number = data.total_credited_amount/100;
+                                          td(colspan='2', style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:12px;text-align:left;border-bottom:2px solid #e8e8e8;padding-bottom:4px;padding-top:10px;")
+                                            | Total store credit earned: $#{number.toFixed(2)}
+                        tr
+                          td(align='center', valign='top', style='padding-top:0;padding-left:20px;padding-right:20px;padding-bottom:40px;')
+                            table(border='0', cellpadding='0', cellspacing='0', width='100%', style='max-width:440px;')
+                              tbody
+                                tr
+                                  td(align='center', valign='top', style="color: #000000;font-family: 'Circe', sans-serif, Arial;font-size:12px;font-weight: normal;line-height: 140%;padding:0 15px 0;text-align: left;vertical-align: middle;border-collapse: collapse;")
+                                    | Your card was temporarily authorized previously. You should see it voided within 7 business days. 
+                                    a(href='#', target='_blank') Learn more
+                    //if (gte mso 9)|(IE)
+        tr
+          td(bgcolor='#fafafa', align='center', style='padding:0px;')
+            //if (gte mso 9)|(IE)
+              table(align='center', border='0', cellspacing='0', cellpadding='0', width='500')
+                tbody
+                  tr
+                    td(align='center', valign='top', width='500')
+            // UNSUBSCRIBE COPY
+            table.responsive-table(width='100%', border='0', cellspacing='0', cellpadding='0', align='center', style='max-width: 500px;')
+              tbody
+                tr
+                  td(bgcolor='#303a88', style="color: #ffffff;font-family: 'Circe', sans-serif, Arial;font-size: 12px;font-weight: 300;line-height: 140%;padding:20px 15px 25px;text-align: center;vertical-align: middle;border-collapse: collapse;")
+                    p(style='margin-bottom:25px;')
+                      | All promotional offers and delivery discounts subject to The Wally Shop 
+                      a(href='#', target='_blank', style='color:#ffffff') terms of service
+                      | . Service fees or tips may still apply. Service fees are separate and are not covered by The Wally Shop.
+                    p(style='margin-bottom:0;')
+                      | The Wally Shop
+                      br
+                      | 344 Maujer St, Brooklyn, NY 11206
+                      br
+                      a(href='https://www.thewallyshop.co', target='_blank', style='color:#ffffff') www.thewallyshop.co
+            //if (gte mso 9)|(IE)
