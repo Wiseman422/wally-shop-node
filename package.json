@@ -38,7 +38,7 @@
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
     "moment-timezone": "^0.5.14",
-    "mongodb": "^3.1.0-beta4",
+    "mongodb": "^3.1.13",
     "mongoose": "^5.2.7",
     "nodemailer": "^4.6.8",
     "passport": "^0.4.0",
