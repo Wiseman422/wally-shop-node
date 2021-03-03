@@ -45,7 +45,7 @@
     "passport-facebook-token": "^3.3.0",
     "passport-local": "^1.0.0",
     "postcode-validator": "^1.2.0",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "sib-api-v3-sdk": "^7.0.1",
     "stripe": "^6.7.0",
     "swagger-jsdoc": "^3.0.2",
