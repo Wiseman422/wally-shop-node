@@ -33,7 +33,7 @@
     "express": "^4.16.2",
     "http": "0.0.0",
     "https": "^1.0.0",
-    "jsonwebtoken": "^7.4.3",
+    "jsonwebtoken": "^9.0.0",
     "klaw-sync": "^3.0.2",
     "lodash": "^4.17.10",
     "moment": "^2.22.2",
